@@ -11,13 +11,11 @@ public class BeanEqualsMatcher<T> extends BaseMatcher<T> {
     private T expected;
 
     public BeanEqualsMatcher(T expected) {
-
         this.expected = expected;
     }
 
     @Override
     public boolean matches(Object actual) {
-
         StringDescription expectedDescription = new StringDescription();
         prettyPrint(expected, expectedDescription);
 
@@ -41,7 +39,6 @@ public class BeanEqualsMatcher<T> extends BaseMatcher<T> {
 
 
     private void prettyPrint(Object object, Description description) {
-
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         description.appendText(gson.toJson(object));
     }
