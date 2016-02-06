@@ -6,14 +6,14 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.et.hamcrest.matchers.BeanMatcher.beanEquals;
+import static com.et.hamcrest.matchers.BeanMatchers.beanEquals;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
 
 /**
  * Created by etimothy on 6/02/2016.
  */
-public class BeanMatcherTest {
+public class BeanMatchersTest {
 
     @Before
     public void setUp() throws Exception {
