@@ -6,12 +6,6 @@ import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.StringDescription;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 public class BeanEqualsMatcher<T> extends BaseMatcher<T> {
 
     private T expected;
