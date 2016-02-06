@@ -19,10 +19,10 @@ public class BeanEqualsMatcher<T> extends BaseMatcher<T> {
     public boolean matches(Object actual) {
 
         StringDescription expectedDescription = new StringDescription();
-        prettyPrint(expected, expectedDescription, 0);
+        prettyPrint(expected, expectedDescription);
 
         StringDescription actualDescription = new StringDescription();
-        prettyPrint(actual, actualDescription, 0);
+        prettyPrint(actual, actualDescription);
 
         return expectedDescription.toString().equals(actualDescription.toString());
     }
@@ -30,17 +30,17 @@ public class BeanEqualsMatcher<T> extends BaseMatcher<T> {
     @Override
     public void describeTo(Description description) {
         description.appendText("\n");
-        prettyPrint(expected, description, 0);
+        prettyPrint(expected, description);
     }
 
     @Override
     public void describeMismatch(Object item, Description description) {
         description.appendText("was \n");
-        prettyPrint(item, description, 0);
+        prettyPrint(item, description);
     }
 
 
-    private void prettyPrint(Object object, Description description, int lvl) {
+    private void prettyPrint(Object object, Description description) {
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         description.appendText(gson.toJson(object));
